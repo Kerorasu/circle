@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'clubs#index'
   devise_for :clubs
   resources :clubs
   # The priority is based upon order of creation: first created -> highest priority.
