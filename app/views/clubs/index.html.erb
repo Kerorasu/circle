@@ -24,9 +24,8 @@
         <td><%= club.frequency %></td>
         <td><%= club.place %></td>
         <td><%= club.pr %></td>
-        <td><%= link_to 'Show', club %></td>
-        <td><%= link_to 'Edit', edit_club_path(club) %></td>
-        <td><%= link_to 'Destroy', club, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', club %></td>
+
       </tr>
     <% end %>
   </tbody>
@@ -34,5 +33,10 @@
 
 <br>
 
-<%= link_to 'New Club', new_club_path %>
-<%= link_to 'Log Out', destroy_club_session_path, method: :delete %>
+
+
+<% if club_signed_in? %>
+  <%= link_to 'ログアウト', destroy_club_session_path, method: :delete %>
+<% else %>
+  <%= link_to 'ログイン', new_club_session_path %>
+<% end %>
