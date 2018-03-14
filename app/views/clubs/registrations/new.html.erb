@@ -21,7 +21,7 @@
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
-    <div class="field">
+  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
@@ -34,8 +34,14 @@
     <%= f.text_field :small_genre %>
   </div>
   <div class="field">
-    <%= f.label :frequency %><br>
-    <%= f.number_field :frequency %>
+    <%= f.label :frequency, "活動頻度(1週間あたり)" %><br>
+    <%= f.radio_button :frequency, 1 %>1
+    <%= f.radio_button :frequency, 2 %>2
+    <%= f.radio_button :frequency, 3 %>3
+    <%= f.radio_button :frequency, 4 %>4
+    <%= f.radio_button :frequency, 5 %>5
+    <%= f.radio_button :frequency, 6 %>6
+    <%= f.radio_button :frequency, 7 %>7
   </div>
   <div class="field">
     <%= f.label :place %><br>
@@ -44,6 +50,28 @@
   <div class="field">
     <%= f.label :pr %><br>
     <%= f.text_area :pr %>
+  </div>
+  <div class="field">
+    <%= f.label :face %><br>
+    <%= f.radio_button :face, '高' %>高
+    <%= f.radio_button :face, '中' %>中
+    <%= f.radio_button :face, '低' %>低
+  </div>
+  <div class="field">
+    <%= f.label :drink %><br>
+    <%= f.radio_button :drink, '高' %>高
+    <%= f.radio_button :drink, '中' %>中
+    <%= f.radio_button :drink, '低' %>低
+  </div>
+  <div class="field">
+    <%= f.label :people %><br>
+    <%= f.radio_button :people, '30~' %>30~
+    <%= f.radio_button :people, '10~29' %>10~29
+    <%= f.radio_button :people, '1~9' %>1~9
+  </div>
+  <div class="field">
+    <%= f.label :twitter_id, "Twitter ID" %><br>
+    <%= f.text_field :twitter_id %>
   </div>
 
   <div class="actions">

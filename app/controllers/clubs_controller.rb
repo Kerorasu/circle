@@ -12,6 +12,19 @@ class ClubsController < ApplicationController
   def show
   end
 
+  def search
+    @clubs = Club.search_with_big_genre(params[:big_genre])
+                 .search_with_small_genre(params[:small_genre])
+                 .search_with_frequency(params[:frequency])
+                 .search_with_face(params[:face])
+                 .search_with_drink(params[:drink])
+                 .search_with_people(params[:people])
+                 .where(
+                   'place LIKE(?)', "%#{params[:place]}%"
+                 )
+    render :index
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_club
