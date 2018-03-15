@@ -27,12 +27,21 @@ class ClubsController < ApplicationController
     render :index
   end
 
-  def get_small_genre
+  def get_small_genre_search
     genre_relation = {
       "" => [["未選択", ""]],
       "スポーツ" => [["未選択", ""], "サッカー", "野球", "テニス"],
       "エンタメ" => [["未選択", ""], "合唱", "語学", "ダンス"],
       "その他" => [["未選択", ""], "ディベート", "マーケティング", "その他"]
+    }
+    @small_genres = genre_relation[params[:big_genre]]
+  end
+
+  def get_small_genre_form
+    genre_relation = {
+      "スポーツ" => ["サッカー", "野球", "テニス"],
+      "エンタメ" => ["合唱", "語学", "ダンス"],
+      "その他" => ["ディベート", "マーケティング", "その他"]
     }
     @small_genres = genre_relation[params[:big_genre]]
   end

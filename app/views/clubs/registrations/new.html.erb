@@ -27,11 +27,11 @@
   </div>
   <div class="field">
     <%= f.label :big_genre %><br>
-    <%= f.text_field :big_genre %>
+    <%= f.select :big_genre, options_for_select(["スポーツ", "エンタメ", "その他"]) %>
   </div>
   <div class="field">
     <%= f.label :small_genre %><br>
-    <%= f.text_field :small_genre %>
+    <%= f.select :small_genre, options_for_select(["サッカー", "野球", "テニス"]) %>
   </div>
   <div class="field">
     <%= f.label :frequency, "活動頻度(1週間あたり)" %><br>
@@ -80,3 +80,14 @@
 <% end %>
 
 <%= render "clubs/shared/links" %>
+
+<script type="text/javascript">
+  $(function() {
+    $('#club_big_genre').change(function() {
+      $.get({
+        url: "/get_small_genre_form",
+        data: { big_genre: $('#club_big_genre').has('option:selected').val() }
+      });
+    });
+  });
+</script>

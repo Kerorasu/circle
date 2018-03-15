@@ -86,13 +86,12 @@
 <% end %>
 
 <script type="text/javascript">
-$(function() {
-  $('#big_genre').change(function() {
-    $.get({
-      url: "/get_small_genre",
-      data: { big_genre: $('#big_genre').has('option:selected').val() }
+  $(function() {
+    $('#big_genre').change(function() {
+      $.get({
+        url: "/get_small_genre_search",
+        data: { big_genre: $('#big_genre').has('option:selected').val() }
+      });
     });
   });
-});
-
 </script>
