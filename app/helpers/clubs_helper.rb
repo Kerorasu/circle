@@ -1,6 +1,7 @@
 module ClubsHelper
   def get_small_genre_by(big_genre)
     genre_relation = {
+      "" => [["未選択", ""]],
       "スポーツ" => ["サッカー", "野球", "テニス"],
       "エンタメ" => ["合唱", "語学", "ダンス"],
       "その他" => ["ディベート", "マーケティング", "その他"]
