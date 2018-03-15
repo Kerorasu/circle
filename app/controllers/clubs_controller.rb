@@ -5,6 +5,7 @@ class ClubsController < ApplicationController
   # GET /clubs.json
   def index
     @clubs = Club.all
+    # @small_genres = []
   end
 
   # GET /clubs/1
@@ -13,6 +14,7 @@ class ClubsController < ApplicationController
   end
 
   def search
+    # @small_genres = []
     @clubs = Club.search_with_big_genre(params[:big_genre])
                  .search_with_small_genre(params[:small_genre])
                  .search_with_frequency(params[:frequency])
@@ -23,6 +25,16 @@ class ClubsController < ApplicationController
                    'place LIKE(?)', "%#{params[:place]}%"
                  )
     render :index
+  end
+
+  def get_small_genre
+    genre_relation = {
+      "" => [["未選択", ""]],
+      "スポーツ" => [["未選択", ""], "サッカー", "野球", "テニス"],
+      "エンタメ" => [["未選択", ""], "合唱", "語学", "ダンス"],
+      "その他" => [["未選択", ""], "ディベート", "マーケティング", "その他"]
+    }
+    @small_genres = genre_relation[params[:big_genre]]
   end
 
   private
