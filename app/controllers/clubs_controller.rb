@@ -11,7 +11,27 @@ class ClubsController < ApplicationController
   # GET /clubs/1
   # GET /clubs/1.json
   def show
+    client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = "a7xubN5S5ZaXRfHmHPl0FQylh"
+      config.consumer_secret     = "fd37DqBqv6fbgqDzFlX7IYaXC0adhm7OYfp40QgD0HLCiMw8Ky"
+      config.access_token        = "458082316-z61C0KZdeY99FPQ0xFyn7ah2Aodn4ZAdyRbCIUey"
+      config.access_token_secret = "mqKAIuyPQiGUzn8jqLZOdB6EVKEU5VSGhP6FzGjPFCVqv"
+    end
+
+        timelines = client.user_timeline(@club.twitter_id)
+    @tweets = []
+
+    if timelines.present?
+      timelines.each do |timeline_tweet|
+         tweet = client.status(timeline_tweet.id)
+         @tweets << tweet.text
+      end
+    end
   end
+
+
+
+
 
   def search
     # @small_genres = []
