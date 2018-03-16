@@ -12,10 +12,10 @@ class ClubsController < ApplicationController
   # GET /clubs/1.json
   def show
     client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = "a7xubN5S5ZaXRfHmHPl0FQylh"
-      config.consumer_secret     = "fd37DqBqv6fbgqDzFlX7IYaXC0adhm7OYfp40QgD0HLCiMw8Ky"
-      config.access_token        = "458082316-z61C0KZdeY99FPQ0xFyn7ah2Aodn4ZAdyRbCIUey"
-      config.access_token_secret = "mqKAIuyPQiGUzn8jqLZOdB6EVKEU5VSGhP6FzGjPFCVqv"
+      config.consumer_key        = ENV["TWITTER_CONSUMER_KEY"]
+      config.consumer_secret     = ENV["TWITTER_CONSUMER_SECRET"]
+      config.access_token        = ENV["TWITTER_ACCESS_TOKEN"]
+      config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
     end
 
         timelines = client.user_timeline(@club.twitter_id)
