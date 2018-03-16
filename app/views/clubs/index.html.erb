@@ -13,13 +13,13 @@
   </div>
   <div class="field">
     <%= label_tag 'frequency[]', "活動頻度(1週間あたり)" %><br>
-    <%= check_box_tag 'frequency[]', 1, params[:frequency] && params[:frequency].include?('1') %>1
-    <%= check_box_tag 'frequency[]', 2, params[:frequency] && params[:frequency].include?('2')  %>2
-    <%= check_box_tag 'frequency[]', 3, params[:frequency] && params[:frequency].include?('3')  %>3
-    <%= check_box_tag 'frequency[]', 4, params[:frequency] && params[:frequency].include?('4')  %>4
-    <%= check_box_tag 'frequency[]', 5, params[:frequency] && params[:frequency].include?('5')  %>5
-    <%= check_box_tag 'frequency[]', 6, params[:frequency] && params[:frequency].include?('6')  %>6
-    <%= check_box_tag 'frequency[]', 7, params[:frequency] && params[:frequency].include?('7')  %>7
+    <%= check_box_tag 'frequency[]', 1, params[:frequency]&.include?('1') %>1
+    <%= check_box_tag 'frequency[]', 2, params[:frequency]&.include?('2')  %>2
+    <%= check_box_tag 'frequency[]', 3, params[:frequency]&.include?('3')  %>3
+    <%= check_box_tag 'frequency[]', 4, params[:frequency]&.include?('4')  %>4
+    <%= check_box_tag 'frequency[]', 5, params[:frequency]&.include?('5')  %>5
+    <%= check_box_tag 'frequency[]', 6, params[:frequency]&.include?('6')  %>6
+    <%= check_box_tag 'frequency[]', 7, params[:frequency]&.include?('7')  %>7
   </div>
   <div class="field">
     <%= label_tag :place, '主な活動場所' %><br>
@@ -27,21 +27,21 @@
   </div>
   <div class="field">
     <%= label_tag 'face[]', 'イケメン率' %><br>
-    <%= check_box_tag 'face[]', '高', params[:face] && params[:face].include?('高') %>高
-    <%= check_box_tag 'face[]', '中', params[:face] && params[:face].include?('中') %>中
-    <%= check_box_tag 'face[]', '低', params[:face] && params[:face].include?('低') %>低
+    <%= check_box_tag 'face[]', '高', params[:face]&.include?('高') %>高
+    <%= check_box_tag 'face[]', '中', params[:face]&.include?('中') %>中
+    <%= check_box_tag 'face[]', '低', params[:face]&.include?('低') %>低
   </div>
   <div class="field">
     <%= label_tag 'drink[]', '飲みサー度' %><br>
-    <%= check_box_tag 'drink[]', '高', params[:drink] && params[:drink].include?('高') %>高
-    <%= check_box_tag 'drink[]', '中', params[:drink] && params[:drink].include?('中') %>中
-    <%= check_box_tag 'drink[]', '低', params[:drink] && params[:drink].include?('低') %>低
+    <%= check_box_tag 'drink[]', '高', params[:drink]&.include?('高') %>高
+    <%= check_box_tag 'drink[]', '中', params[:drink]&.include?('中') %>中
+    <%= check_box_tag 'drink[]', '低', params[:drink]&.include?('低') %>低
   </div>
   <div class="field">
     <%= label_tag 'people[]', '人数規模(1学年あたり)' %><br>
-    <%= check_box_tag 'people[]', '30~', params[:people] && params[:people].include?('30~') %>30~
-    <%= check_box_tag 'people[]', '10~29', params[:people] && params[:people].include?('10~29') %>10~29
-    <%= check_box_tag 'people[]', '1~9', params[:people] && params[:people].include?('1~9') %>1~9
+    <%= check_box_tag 'people[]', '30~', params[:people]&.include?('30~') %>30~
+    <%= check_box_tag 'people[]', '10~29', params[:people]&.include?('10~29') %>10~29
+    <%= check_box_tag 'people[]', '1~9', params[:people]&.include?('1~9') %>1~9
   </div>
   <div class="actions">
     <%= submit_tag "検索" %>
