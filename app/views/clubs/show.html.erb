@@ -3,32 +3,32 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>サークル名:</strong>
   <%= @club.name %>
 </p>
 
 <p>
-  <strong>Big genre:</strong>
+  <strong>ジャンル:</strong>
   <%= @club.big_genre %>
 </p>
 
 <p>
-  <strong>Small genre:</strong>
+  <strong>カテゴリ:</strong>
   <%= @club.small_genre %>
 </p>
 
 <p>
-  <strong>Frequency:</strong>
+  <strong>活動頻度(1週間あたり):</strong>
   <%= @club.frequency %>
 </p>
 
 <p>
-  <strong>Place:</strong>
+  <strong>主な活動場所:</strong>
   <%= @club.place %>
 </p>
 
 <p>
-  <strong>Pr:</strong>
+  <strong>PR文:</strong>
   <%= @club.pr %>
 </p>
 
@@ -52,6 +52,8 @@
   <%= @club.twitter_id %>
 </p>
 
+<p>
+  <strong>Twitter最近のつぶやき</strong>
 <%= @tweets.class %>
 
 <%= @tweets.inspect %>
