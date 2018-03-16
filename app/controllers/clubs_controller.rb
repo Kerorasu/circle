@@ -18,8 +18,11 @@ class ClubsController < ApplicationController
       config.access_token_secret = ENV["TWITTER_ACCESS_TOKEN_SECRET"]
     end
 
-        timelines = client.user_timeline(@club.twitter_id)
-    @tweets = []
+    begin
+      timelines = client.user_timeline(@club.twitter_id)
+      @tweets = []
+    rescue
+    end
 
     if timelines.present?
       timelines.each do |timeline_tweet|
