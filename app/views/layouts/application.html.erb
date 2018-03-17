@@ -12,7 +12,7 @@
 
     <header class="clearfix">
       <div class="icon">
-        ワセカレ
+        <%= link_to 'ワセカレ', root_path %>
       </div>
       <% if club_signed_in? %>
         <%= link_to 'ログアウト', destroy_club_session_path, method: :delete, class: 'header-btn' %>

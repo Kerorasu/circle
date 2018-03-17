@@ -1,71 +1,72 @@
-
-
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>サークル名:</strong>
-  <%= @club.name %>
-</p>
+<div class="clearfix">
+  <%= link_to clubs_path, class: 'back-btn' do %>
+    <i class="fas fa-angle-left"></i>
+  <% end %>
 
-<p>
-  <strong>ジャンル:</strong>
-  <%= @club.big_genre %>
-</p>
-
-<p>
-  <strong>カテゴリ:</strong>
-  <%= @club.small_genre %>
-</p>
-
-<p>
-  <strong>活動頻度(1週間あたり):</strong>
-  <%= @club.frequency %>
-</p>
-
-<p>
-  <strong>主な活動場所:</strong>
-  <%= @club.place %>
-</p>
-
-<p>
-  <strong>PR文:</strong>
-  <%= @club.pr %>
-</p>
-
-<p>
-  <strong>イケメン率:</strong>
-  <%= @club.face %>
-</p>
-
-<p>
-  <strong>飲みサー度:</strong>
-  <%= @club.drink %>
-</p>
-
-<p>
-  <strong>人数規模（1学年）:</strong>
-  <%= @club.people %>
-</p>
-
-<p>
-  <strong>Twitter ID:</strong>
-  <%= @club.twitter_id %>
-</p>
-
-<div>
-  <a class="twitter-timeline"
-     href="https://twitter.com/<%= @club.twitter_id %>"
-     data-width="300"
-     data-height="300">
-     @<%= @club.twitter_id %>によるツイート
-  </a>
+  <% if current_club == @club %>
+    <%= link_to '編集', edit_club_registration_path, class: 'club-edit-btn' %>
+  <% end %>
 </div>
 
 
-<% if current_club == @club %>
-  <%= link_to '編集', edit_club_registration_path %> |
-<% end %>
+<div class="club-detail">
+  <div class="detail-item">
+    <h3>サークル名</h3>
+    <p><%= @club.name %></p>
+  </div>
 
-<%= link_to '戻る', clubs_path %>
+  <div class="detail-item">
+    <h3>ジャンル</h3>
+    <p><%= @club.big_genre %></p>
+  </div>
+
+  <div class="detail-item">
+    <h3>カテゴリ</h3>
+    <p><%= @club.small_genre %></p>
+  </div>
+
+  <div class="detail-item">
+    <h3>活動頻度(1週間あたり)</h3>
+    <p><%= @club.frequency %></p>
+  </div>
+
+  <div class="detail-item">
+    <h3>主な活動場所</h3>
+    <p><%= @club.place %></p>
+  </div>
+
+  <div class="detail-item">
+    <h3>PR文</h3>
+    <p><%= @club.pr %></p>
+  </div>
+
+  <div class="detail-item">
+    <h3>イケメン率</h3>
+    <p><%= @club.face %></p>
+  </div>
+
+  <div class="detail-item">
+    <h3>飲みサー度</h3>
+    <p><%= @club.drink %></p>
+  </div>
+
+  <div class="detail-item">
+    <h3>人数規模（1学年）</h3>
+    <p><%= @club.people %></p>
+  </div>
+</div>
+
+<div class="twitter-box">
+  <a class="twitter-timeline"
+    href="https://twitter.com/<%= @club.twitter_id %>"
+    data-width="100%"
+    data-height="400">
+    @<%= @club.twitter_id %>によるツイート
+  </a>
+</div>
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+

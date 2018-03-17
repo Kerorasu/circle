@@ -1,85 +1,87 @@
-<h2>サークル情報登録</h2>
+<div class="form">
+  <h2>サークル情報登録</h2>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email, "メールアドレス" %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="field">
+      <%= f.label :email, "メールアドレス" %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password, "パスワード" %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+    <div class="field">
+      <%= f.label :password, "パスワード" %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation, "パスワード再確認" %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+    <div class="field">
+      <%= f.label :password_confirmation, "パスワード再確認" %><br />
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :name, "サークル名" %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :big_genre, "ジャンル" %><br>
-    <%= f.select :big_genre, options_for_select(["スポーツ", "エンタメ", "その他"]) %>
-  </div>
-  <div class="field">
-    <%= f.label :small_genre, "カテゴリ" %><br>
-    <%= f.select :small_genre, options_for_select(["サッカー", "野球", "テニス"]) %>
-  </div>
-  <div class="field">
-    <%= f.label :frequency, "活動頻度(1週間あたり)" %><br>
-    <%= f.radio_button :frequency, 1 %>1
-    <%= f.radio_button :frequency, 2 %>2
-    <%= f.radio_button :frequency, 3 %>3
-    <%= f.radio_button :frequency, 4 %>4
-    <%= f.radio_button :frequency, 5 %>5
-    <%= f.radio_button :frequency, 6 %>6
-    <%= f.radio_button :frequency, 7 %>7
-  </div>
-  <div class="field">
-    <%= f.label :place, "主な活動場所" %><br>
-    <%= f.text_field :place %>
-  </div>
-  <div class="field">
-    <%= f.label :pr, "PR文" %><br>
-    <%= f.text_area :pr %>
-  </div>
-  <div class="field">
-    <%= f.label :face, "イケメン度" %><br>
-    <%= f.radio_button :face, '高' %>高
-    <%= f.radio_button :face, '中' %>中
-    <%= f.radio_button :face, '低' %>低
-  </div>
-  <div class="field">
-    <%= f.label :drink, "飲みサー度" %><br>
-    <%= f.radio_button :drink, '高' %>高
-    <%= f.radio_button :drink, '中' %>中
-    <%= f.radio_button :drink, '低' %>低
-  </div>
-  <div class="field">
-    <%= f.label :people, "人数規模(1学年あたり)" %><br>
-    <%= f.radio_button :people, '30~' %>30~
-    <%= f.radio_button :people, '10~29' %>10~29
-    <%= f.radio_button :people, '1~9' %>1~9
-  </div>
-  <div class="field">
-    <%= f.label :twitter_id, "Twitter ID" %><br>
-    <%= f.text_field :twitter_id %>
-  </div>
+    <div class="field">
+      <%= f.label :name, "サークル名" %><br>
+      <%= f.text_field :name %>
+    </div>
+    <div class="field">
+      <%= f.label :big_genre, "ジャンル" %><br>
+      <%= f.select :big_genre, options_for_select(["スポーツ", "エンタメ", "その他"]) %>
+    </div>
+    <div class="field">
+      <%= f.label :small_genre, "カテゴリ" %><br>
+      <%= f.select :small_genre, options_for_select(["サッカー", "野球", "テニス"]) %>
+    </div>
+    <div class="field">
+      <%= f.label :frequency, "活動頻度(1週間あたり)" %><br>
+      <%= f.radio_button :frequency, 1 %>1
+      <%= f.radio_button :frequency, 2 %>2
+      <%= f.radio_button :frequency, 3 %>3
+      <%= f.radio_button :frequency, 4 %>4
+      <%= f.radio_button :frequency, 5 %>5
+      <%= f.radio_button :frequency, 6 %>6
+      <%= f.radio_button :frequency, 7 %>7
+    </div>
+    <div class="field">
+      <%= f.label :place, "主な活動場所" %><br>
+      <%= f.text_field :place %>
+    </div>
+    <div class="field">
+      <%= f.label :pr, "PR文" %><br>
+      <%= f.text_area :pr %>
+    </div>
+    <div class="field">
+      <%= f.label :face, "イケメン度" %><br>
+      <%= f.radio_button :face, '高' %>高
+      <%= f.radio_button :face, '中' %>中
+      <%= f.radio_button :face, '低' %>低
+    </div>
+    <div class="field">
+      <%= f.label :drink, "飲みサー度" %><br>
+      <%= f.radio_button :drink, '高' %>高
+      <%= f.radio_button :drink, '中' %>中
+      <%= f.radio_button :drink, '低' %>低
+    </div>
+    <div class="field">
+      <%= f.label :people, "人数規模(1学年あたり)" %><br>
+      <%= f.radio_button :people, '30~' %>30~
+      <%= f.radio_button :people, '10~29' %>10~29
+      <%= f.radio_button :people, '1~9' %>1~9
+    </div>
+    <div class="field">
+      <%= f.label :twitter_id, "Twitter ID" %><br>
+      <%= f.text_field :twitter_id %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "新規登録" %>
-  </div>
-<% end %>
+    <div class="actions">
+      <%= f.button "新規登録" %>
+    </div>
+  <% end %>
 
-<%= render "clubs/shared/links" %>
+  <%= render "clubs/shared/links" %>
+</div>
 
 <script type="text/javascript">
   $(function() {

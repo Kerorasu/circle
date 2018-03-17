@@ -1,0 +1,70 @@
+.form {
+  padding: 0 60px;
+  font-size: 16px;
+
+  h2 {
+    margin-bottom: 20px;
+  }
+
+  .field {
+    margin-bottom: 20px;
+
+    label {
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
+    input[type="text"], input[type="email"], input[type="password"] {
+      width: 100%;
+      height: 20px;
+      border-radius: 4px;
+    }
+
+    textarea {
+      width: 100%;
+      height: 80px;
+      border-width: 2px;
+      border-style: inset;
+      border-radius: 4px;
+    }
+
+    select {
+      width: 120px;
+      padding: 10px;
+    }
+  }
+
+  .actions {
+    margin-bottom: 30px;
+
+    button[type="submit"] {
+      display: block;
+      margin: 0 auto;
+      width: 150px;
+      padding: 10px 0;
+      font-size: 14px;
+      border: none;
+      background-color: orange;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+
+      &.reset-pass-btn {
+        width: 260px;
+      }
+    }
+
+  }
+
+  a {
+    background-color: #ffeecd;
+    width: 260px;
+    margin: 0 auto;
+    display: block;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+    padding: 10px 0;
+    text-align: center;
+  }
+}
+
+.form.search-form {
+  padding: 0 10px;
+}

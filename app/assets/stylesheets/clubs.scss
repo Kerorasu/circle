@@ -83,3 +83,30 @@
   }
 }
 
+.club-detail {
+  margin: 0 10px 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+  border-radius: 4px;
+
+  .detail-item {
+    h3 {
+      background-color: #ffeecd;
+      padding: 5px 10px;
+    }
+
+    p {
+      padding: 5px 15px;
+    }
+
+    &:first-child h3 {
+      border-radius: 4px 4px 0 0;
+    }
+  }
+}
+
+.twitter-box {
+  margin: 0 10px 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+  border-radius: 4px;
+}
+
