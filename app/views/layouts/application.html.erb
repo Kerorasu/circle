@@ -1,14 +1,33 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Circle</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>女子大生のためのワセカレサーチ</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ" crossorigin="anonymous"></script>
+  </head>
+  <body>
 
-<%= yield %>
+    <header class="clearfix">
+      <div class="icon">
+        ワセカレ
+      </div>
+      <% if club_signed_in? %>
+        <%= link_to 'ログアウト', destroy_club_session_path, method: :delete, class: 'header-btn' %>
+      <% else %>
+        <%= link_to 'サークル関係者はこちら', new_club_session_path, class: 'header-btn' %>
+      <% end %>
+    </header>
 
-</body>
+    <div class="main">
+      <%= yield %>
+    </div>
+
+    <footer>
+      &copy; 2018 Kei Shiomi All Rights Reserved.
+    </footer>
+
+  </body>
 </html>
